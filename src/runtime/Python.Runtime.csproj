@@ -368,6 +368,7 @@
   <ItemGroup>
     <None Include="buildclrmodule.bat" />
     <None Include="clrmodule.il" />
+    <None Include="pythonnet.snk" />
     <None Include="x64\clrmodule-platform.il" />
     <None Include="x86\clrmodule-platform.il" />
   </ItemGroup>
@@ -376,19 +377,22 @@
       <LogicalName>clr.py</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>call "$(ProjectDir)buildclrmodule.bat" $(Platform) "$(ProjectDir)" "$(TargetDir)clr.pyd"
-if NOT EXIST "$(SolutionDir)\py$(OutDir)" mkdir "$(SolutionDir)\py$(OutDir)"
+    <PostBuildEvent>if NOT EXIST "$(SolutionDir)\py$(OutDir)" mkdir "$(SolutionDir)\py$(OutDir)"
 copy "$(TargetPath)" "$(SolutionDir)\py$(OutDir)"
 copy "$(TargetDir)*.pdb" "$(SolutionDir)\py$(OutDir)"
-copy "$(TargetDir)clr.pyd" "$(SolutionDir)\py$(OutDir)"
-copy "$(TargetDir)*.pyd" "$(SolutionDir)\build\lib.win-amd64-3.5"
-copy "$(TargetDir)*.dll" "$(SolutionDir)\build\lib.win-amd64-3.5"</PostBuildEvent>
+if NOT EXIST "$(SolutionDir)\build" mkdir "$(SolutionDir)\build"
+if NOT EXIST "$(SolutionDir)\build\lib.win-amd64-3.5" mkdir "$(SolutionDir)\build\lib.win-amd64-3.5"
+copy "$(TargetDir)*.dll" "$(SolutionDir)\build\lib.win-amd64-3.5"
+</PostBuildEvent>
     <PreBuildEvent>del "$(TargetDir)clr.pyd"</PreBuildEvent>
   </PropertyGroup>
-  <Import Project="../../packages/UnmanagedExports.1.2.6/tools/RGiesecke.DllExport.targets" />
+  <Import Project="../../packages/UnmanagedExports.1.2.7/tools/RGiesecke.DllExport.targets" />
 </Project>

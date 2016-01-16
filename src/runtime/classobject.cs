@@ -223,7 +223,6 @@ namespace Python.Runtime {
             // Arg may be a tuple in the case of an indexer with multiple
             // parameters. If so, use it directly, else make a new tuple
             // with the index arg (method binders expect arg tuples).
-
             IntPtr args = idx;
             bool free = false;
 

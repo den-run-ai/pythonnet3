@@ -80,7 +80,7 @@ public class clrModule
             System.Console.WriteLine("Success!");
 #endif
         }
-        catch (System.IO.FileNotFoundException)
+        catch (System.IO.IOException)
         {
             try
             {

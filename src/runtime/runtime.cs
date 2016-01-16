@@ -196,7 +196,7 @@ namespace Python.Runtime {
 #endif
 
 #if (PYTHON_WITH_PYDEBUG)
-        internal const string dllWithPyDebug = "_d";
+        internal const string dllWithPyDebug = "d";
 #else
         internal const string dllWithPyDebug = "";
 #endif

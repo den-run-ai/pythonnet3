@@ -265,6 +265,8 @@
     <Compile Include="methodtest.cs" />
     <Compile Include="propertytest.cs" />
     <Compile Include="threadtest.cs" />
+    <Compile Include="doctest.cs" />
+    <Compile Include="subclasstest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
