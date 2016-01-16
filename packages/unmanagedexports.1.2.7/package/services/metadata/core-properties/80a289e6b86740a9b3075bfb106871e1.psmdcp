@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?><coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"><dc:creator>Robert Giesecke</dc:creator><dc:description>A set of compile-time libraries (nothing to deploy) and a build task that enable you to export functions from managed code to native applications.
+      That means, you can create plugins in a managed language like C# or F# for native applications that only have a C-Api (like Notepad++).
+      The nuget package is all you need. Just mark your methods with [DllExport] and build for x86, x64 or ia64.
+
+      Hints:
+      - You have to set your platform target to either x86, ia64 or x64. AnyCPU assemblies cannot export functions.
+      - The export name defaults to the method name and the calling convention to stdcall. If that's all what you want, you can just use [DllExport] without parameters.
+      - You cannot put your exports in generic types or export generic methods. (The CLR wouldn't know what type parameters to use)</dc:description><dc:identifier>UnmanagedExports</dc:identifier><version>1.2.7</version><dc:language>en-US</dc:language><keywords>dllexport unmanaged exports export</keywords><dc:title>Unmanaged Exports (DllExport for .Net)</dc:title><lastModifiedBy>NuGet, Version=2.8.60318.667, Culture=neutral, PublicKeyToken=null;Microsoft Windows NT 6.2.9200.0;.NET Framework 4</lastModifiedBy></coreProperties>
