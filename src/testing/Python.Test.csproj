@@ -249,7 +249,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="arraytest.cs" />
-    <Compile Include="subclasstest.cs" />
     <Compile Include="classtest.cs" />
     <Compile Include="constructortests.cs" />
     <Compile Include="conversiontest.cs" />
